@@ -1,5 +1,5 @@
-import { Flex, Image, Button } from '@chakra-ui/react'
-import { Text, Input, Link } from 'components'
+import { Flex, Image } from '@chakra-ui/react'
+import { Text, Input, Link, Button } from 'components'
 
 export const LoginScreen = () => {
   return (
@@ -17,16 +17,23 @@ export const LoginScreen = () => {
           <Text.ScreenTitle mt="48px">Login</Text.ScreenTitle>
           <Input mt="24px" placeholder="email@email.com" />
           <Input.Password mt="16px" placeholder="*************" />
+
           <Flex
             mt="8px"
+           mb="24px"
             w="100%"
             alignItems="flex-end"
             justifyContent="flex-end"
           >
             <Link>Esqueceu sua senha?</Link>
           </Flex>
+
           <Button mt="24px">Login</Button>
-          <Link mt="48px">Cadastre-se</Link>
+          <Link.Action
+            mt="48px"
+            text="Não possui conta?"
+            actionText="Cadastre-se aqui!"
+          />
         </Flex>
       </Flex>
       <Flex
