@@ -1,6 +1,6 @@
 import { Button as ChakraButton } from '@chakra-ui/react'
 
-export const Button = ({ children, props }) => (
+export const Button = ({ children, ...props }) => (
   <ChakraButton
     fontWeight="bold"
     fontSize="16px"
@@ -8,7 +8,7 @@ export const Button = ({ children, props }) => (
     h="56px"
     bg="brand.primary"
     _hover={{
-        bg:"brand.pripary"
+      bg: 'brand.primary'
     }}
     {...props}
   >
