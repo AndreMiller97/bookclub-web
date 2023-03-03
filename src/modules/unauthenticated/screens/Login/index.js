@@ -39,6 +39,7 @@ export const LoginScreen = () => {
           <Image src="/images/logo.svg" alt="Logo" w="160px" h="48px" />
           <Text.ScreenTitle mt="48px">Login</Text.ScreenTitle>
           <Input
+            type="email"
             id="email"
             name="email"
             value={values.email}
