@@ -1,11 +1,37 @@
-import { Flex, Image } from '@chakra-ui/react'
+import { Flex, Image, useToast } from '@chakra-ui/react'
 import { Text, Input, Button } from 'components'
 import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import { useMutation } from 'react-query'
+import { ForgotPasswordCall } from 'services/api/requests'
 
 export const ForgotPasswordScreen = () => {
   const navigate = useNavigate()
+  const toast = useToast()
+
+  const mutation = useMutation((data) => ForgotPasswordCall(data), {
+    onError: (error) => {
+      toast({
+        title: 'Falha na requisição.',
+        description:
+          error?.response?.data?.error || 'Por favor, tente novamente.',
+        status: 'error',
+        duration: 3000,
+        isClosable: true
+      })
+    },
+    onSuccess: (data) => {
+      console.log({ data })
+      toast({
+        title: 'E-mail enviado com sucesso.',
+        status: 'success',
+        duration: 5000,
+        isClosable: true
+      })
+      navigate(`/reset-password?email=${values.email}`)
+    }
+  })
 
   const { handleSubmit, values, handleChange, errors } = useFormik({
     initialValues: {
@@ -17,7 +43,7 @@ export const ForgotPasswordScreen = () => {
         .required('E-mail é obrigatório.')
     }),
     onSubmit: (data) => {
-      navigate('/reset-password')
+      mutation.mutate(data)
     }
   })
 
@@ -49,8 +75,12 @@ export const ForgotPasswordScreen = () => {
             placeholder="email@exemplo.com"
           />
 
-          <Button onClick={handleSubmit} mt="24px">
-            Avançar
+          <Button
+            isLoading={mutation.isLoading}
+            onClick={handleSubmit}
+            mt="24px"
+          >
+            Enviar
           </Button>
         </Flex>
       </Flex>
