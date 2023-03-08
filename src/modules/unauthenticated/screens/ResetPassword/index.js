@@ -83,7 +83,7 @@ export const ResetPasswordScreen = () => {
             onChange={handleChange}
             error={errors.token}
             mt="24px"
-            placeholder="Ex.: 0000"
+            placeholder="Ex.: 000000"
             maxLength={6}
           />
           <Input.Password
