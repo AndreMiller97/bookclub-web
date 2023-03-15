@@ -4,17 +4,22 @@ import { NavBar, BookList, CategoryList } from 'components'
 
 export const HomeScreen = () => {
   return (
-    <Flex flexDir="column" alignItems="center" justifyContent="center">
+    <Flex flexDir="column">
       <NavBar />
-      <Flex mt="48px" w="100%" h="200px" px={['24px', '48px', '80px', '112px']}>
+      <Flex
+        mt={['24px', '48px']}
+        w="100%"
+        h={['72px', '200px']}
+        paddingX={['24px', '48px', '80px', '112px']}
+      >
         <Flex
           w="100%"
           h="100%"
           backgroundImage="url('/images/banner.svg')"
           backgroundSize="cover"
-          backgroundPosition="center"
+          backgroundPosition={['start', 'center']}
           backgroundRepeat="no-repeat"
-          borderRadius="24px"
+          borderRadius={['8px', '24px']}
         />
       </Flex>
       <BookList />
