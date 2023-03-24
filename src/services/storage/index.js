@@ -7,7 +7,7 @@ export const saveItem = async (key, data) => {
   }
 }
 
-export const restorageItem = async (key) => {
+export const restoreItem = async (key) => {
   try {
     const data = localStorage.getItem(key)
     return data

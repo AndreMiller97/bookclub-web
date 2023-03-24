@@ -20,7 +20,7 @@ export const BookDetailScreen = () => {
     }
   )
 
-  console.log({ data })
+ // console.log({ data })
 
   const addFavoriteMutation = useMutation((data) => addBookToFavorites(data), {
     onError: (error) => {
@@ -81,7 +81,7 @@ export const BookDetailScreen = () => {
     }
   }
 
-  console.log({ data })
+ // console.log({ data })
   return (
     <Flex flexDir="column">
       <NavBar />
@@ -163,7 +163,7 @@ export const BookDetailScreen = () => {
       </Flex>
       <CategoryList
         title="Livros Relacionados"
-        categoryId={data?.data?.book?.category?.id}
+        categoryId={data?.data?.data?.book?.category?.id}
       />
     </Flex>
   )
