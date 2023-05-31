@@ -1,4 +1,4 @@
-import { Flex, useToast } from '@chakra-ui/react'
+ import { Flex, useToast } from '@chakra-ui/react'
 import { NavBar, Text, Button, CategoryList } from 'components'
 import { useParams } from 'react-router-dom'
 import { useQuery, useMutation } from 'react-query'
@@ -6,7 +6,6 @@ import {
   getBookDetail,
   addBookToFavorites,
   deleteBookFromFavorites
-  // deleteBookFromFavorites
 } from 'services/api/requests'
 
 export const BookDetailScreen = () => {
@@ -19,8 +18,6 @@ export const BookDetailScreen = () => {
       enabled: !!id
     }
   )
-
- // console.log({ data })
 
   const addFavoriteMutation = useMutation((data) => addBookToFavorites(data), {
     onError: (error) => {
@@ -168,3 +165,4 @@ export const BookDetailScreen = () => {
     </Flex>
   )
 }
+
