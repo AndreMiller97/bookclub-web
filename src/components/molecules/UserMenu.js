@@ -11,7 +11,7 @@ import {
   HiOutlineLogout
 } from 'react-icons/hi'
 
-export const UserMenu = () => {
+export const UserMenu = ({ setShowModal }) => {
   const userStore = useSelector((state) => state.user)
   const navigate = useNavigate()
 
@@ -28,14 +28,14 @@ export const UserMenu = () => {
       icon: BiUser,
       text: 'Dados Pessoais',
       divider: false,
-      onClick: () => navigate('/')
+      onClick: () => setShowModal('user')
     },
     {
       id: 2,
       icon: BiCheckShield,
       text: 'Alterar Senha',
       divider: true,
-      onClick: () => navigate('/')
+      onClick: () => setShowModal('password')
     },
     {
       id: 3,
@@ -49,7 +49,7 @@ export const UserMenu = () => {
       icon: HiOutlineClipboard,
       text: ' Plitica de Privacidade',
       divider: true,
-      onClick: () => navigate('/')
+      onClick: () => setShowModal('privacy-policy')
     },
     {
       id: 5,
@@ -72,6 +72,7 @@ export const UserMenu = () => {
             borderWidth="2px"
             borderColor="brand.primary"
             bg="brand.greyLight"
+            color="black"
             mr={['6px', '12px']}
           />
           <Flex display={['none', 'flex']}>

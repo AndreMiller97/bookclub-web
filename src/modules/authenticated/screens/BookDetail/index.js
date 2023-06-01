@@ -1,4 +1,4 @@
- import { Flex, useToast } from '@chakra-ui/react'
+import { Flex, useToast } from '@chakra-ui/react'
 import { NavBar, Text, Button, CategoryList } from 'components'
 import { useParams } from 'react-router-dom'
 import { useQuery, useMutation } from 'react-query'
@@ -78,7 +78,7 @@ export const BookDetailScreen = () => {
     }
   }
 
- // console.log({ data })
+  // console.log({ data })
   return (
     <Flex flexDir="column">
       <NavBar />
@@ -165,4 +165,3 @@ export const BookDetailScreen = () => {
     </Flex>
   )
 }
-
