@@ -35,7 +35,7 @@ export const NavBar = ({ query, setQuery }) => {
 
       <UserMenu setShowModal={setShowModal} />
 
-      {showModal === 'user' && <UserModal onCloseModal={onCloseModal} />}
+      {showModal === 'user' && <UserModal onClose={onCloseModal} />}
     </Flex>
   )
 }

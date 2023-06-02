@@ -78,7 +78,6 @@ export const BookDetailScreen = () => {
     }
   }
 
-  // console.log({ data })
   return (
     <Flex flexDir="column">
       <NavBar />
