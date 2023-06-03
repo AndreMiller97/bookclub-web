@@ -70,7 +70,7 @@ export const BookDetailScreen = () => {
 
   const handleButtonClick = () => {
     if (data?.data?.favorite) {
-      deleteFavoriteMutation.mutate(data?.data?.favorite.id)
+      deleteFavoriteMutation.mutate(data?.data?.favorite?.id)
     } else {
       addFavoriteMutation.mutate({
         book_id: id
@@ -99,6 +99,7 @@ export const BookDetailScreen = () => {
           backgroundRepeat="no-repeat"
           borderRadius={['12px']}
         />
+
         <Flex
           mt={['24px', '0px']}
           w={['100%', '70%']}
@@ -111,9 +112,10 @@ export const BookDetailScreen = () => {
           <Text mt="6px" fontSize="16px" color="brand.greyDark">
             {data?.data?.book?.author?.name}
           </Text>
+
           <Text.ScreenTitle mt="16px">Informações</Text.ScreenTitle>
           <Flex
-            mt="6px"
+            mt="4px"
             w="100%"
             flexDir={['column', 'row']}
             justifyContent={['flex-start', 'space-between']}
@@ -125,15 +127,13 @@ export const BookDetailScreen = () => {
               Páginas: {data?.data?.book?.pages}
             </Text>
             <Text fontSize="14px" color="brand.greyDark">
-              Ano de Lançamento:{' '}
+              Ano de lançamento:{' '}
               {new Date(data?.data?.book?.release_date).getFullYear()}
             </Text>
           </Flex>
-          <Text.ScreenTitle maxW="80%" mt="16px">
-            Sinopse
-          </Text.ScreenTitle>
-          <Text mt="6px" fontSize="12px" color="brand.greyDark">
-            Páginas: {data?.data?.book?.synopsis}
+          <Text.ScreenTitle mt="16px">Sinopse</Text.ScreenTitle>
+          <Text maxW="80%" mt="4px" fontSize="12px" color="brand.greyDark">
+            {data?.data?.book?.synopsis}
           </Text>
         </Flex>
         <Flex
@@ -146,9 +146,9 @@ export const BookDetailScreen = () => {
             isLoading={
               isLoading ||
               addFavoriteMutation.isLoading ||
-              deleteBookFromFavorites.isLoading
+              deleteFavoriteMutation.isLoading
             }
-            secondery={data?.data.favorite}
+            secondary={data?.data?.favorite}
             onClick={() => handleButtonClick()}
           >
             {data?.data?.favorite
@@ -159,7 +159,7 @@ export const BookDetailScreen = () => {
       </Flex>
       <CategoryList
         title="Livros Relacionados"
-        categoryId={data?.data?.data?.book?.category?.id}
+        categoryId={data?.data?.book?.category?.id}
       />
     </Flex>
   )
