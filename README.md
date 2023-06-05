@@ -1,9 +1,8 @@
 # BookClub
 
-[![BookClub Demo](/public/img/preview-book-club.png 'BookClub Demo')]
+[![Preview](/public/img/preview-book-club.png 'Preview')](https://github.com/AndreMiller97/bookclub-web/blob/main/public/images/preview-book-club.PNG)
 
 ## Description
-
 
 App made in React.js with the idea of ​​being a virtual bookshelf. Where the user when registering, can search for favorite and unfavorite books and authors, in addition to being able to see information and relavionated books.
 
