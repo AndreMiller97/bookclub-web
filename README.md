@@ -1,6 +1,8 @@
 # BookClub
 
-[![Preview](/public/img/preview-book-club.png 'Preview')](https://github.com/AndreMiller97/bookclub-web/blob/main/public/images/preview-book-club.PNG)
+<p>
+    <img height="500" src="https://github.com/AndreMiller97/bookclub-web/blob/main/public/images/preview-book-club.PNG"/>
+</p>
 
 ## Description
 
